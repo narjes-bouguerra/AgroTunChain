@@ -1,0 +1,131 @@
+<h1 align="center">Liste des commandes</h1>
+<table class="table table-bordered">
+  <tr>
+    <td>titre</td>
+    <td>client</td>
+    <td>quantite</td>
+    <td>vendeur</td>
+    <td>Prix</td>
+    <td>Totale</td>
+    <td>Etat</td>
+    <td
+      *ngIf="
+        grade === 'transporteur' || grade === 'usine' || grade === 'emballage'
+      "
+    >
+      Action
+    </td>
+  </tr>
+  <tr *ngFor="let us of commandes">
+    <td>
+      <span
+        *ngIf="
+          id === us.id_client ||
+          grade === 'transporteur' ||
+          grade === 'usine' ||
+          grade === 'emballage'
+        "
+        >{{ us.titre }}</span
+      >
+    </td>
+    <td>
+      <span
+        *ngIf="
+          id === us.id_client ||
+          grade === 'transporteur' ||
+          grade === 'usine' ||
+          grade === 'emballage'
+        "
+        >{{ us.nom_cl }}</span
+      >
+    </td>
+    <td>
+      <span
+        *ngIf="
+          id === us.id_client ||
+          grade === 'transporteur' ||
+          grade === 'usine' ||
+          grade === 'emballage'
+        "
+        >{{ us.quantite }}</span
+      >
+    </td>
+    <td>
+      <span
+        *ngIf="
+          id === us.id_client ||
+          grade === 'transporteur' ||
+          grade === 'usine' ||
+          grade === 'emballage'
+        "
+        >{{ us.vendeur }}</span
+      >
+    </td>
+    <td>
+      <span
+        *ngIf="
+          id === us.id_client ||
+          grade === 'transporteur' ||
+          grade === 'usine' ||
+          grade === 'emballage'
+        "
+        >{{ us.prix }}</span
+      >
+    </td>
+    <td>
+      <span
+        *ngIf="
+          id === us.id_client ||
+          grade === 'transporteur' ||
+          grade === 'usine' ||
+          grade === 'emballage'
+        "
+        >{{ us.prix * us.quantite }}</span
+      >
+    </td>
+    <td>
+      <span
+        *ngIf="
+          id === us.id_client ||
+          grade === 'transporteur' ||
+          grade === 'usine' ||
+          grade === 'emballage'
+        "
+        >{{ us.etat }}</span
+      >
+    </td>
+    <td *ngIf="grade === 'transporteur'">
+      <button (click)="annuler(us)" class="btn btn-danger">
+        Annuler</button
+      ><br /><br /><br /><button
+        *ngIf="grade === 'transporteur'"
+        (click)="valider(us)"
+        class="btn btn-success"
+      >
+        marqué comme livré
+      </button>
+    </td>
+    <td *ngIf="grade === 'emballage'">
+      <button
+        *ngIf="grade === 'emballage'"
+        (click)="emballer(us)"
+        class="btn btn-success"
+      >
+        emballer
+      </button>
+    </td>
+    <td *ngIf="grade === 'usine'">
+      <button
+        *ngIf="grade === 'usine'"
+        (click)="stocker(us)"
+        class="btn btn-success"
+      >
+        stocker
+      </button>
+    </td>
+  </tr>
+</table>
+<div align="center">
+  <a href="#" class="btn btn link" Onclick="window.print()"> imprimer</a
+  ><a href="profile" class="btn btn-primary">retour</a>
+</div>

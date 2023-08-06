@@ -1,0 +1,60 @@
+<div class="container">
+  <div class="row">
+    <div class="col-sm-5"></div>
+    <div class="col-sm">
+      <form (submit)="connect()">
+        <table class="table table-borderless main">
+          <tr>
+            <td colspan="2"><h1>connexion</h1></td>
+          </tr>
+          <tr>
+            <td>Login:</td>
+            <td>
+              <input
+                class="form-control"
+                [(ngModel)]="user.email"
+                type="text"
+                name="d"
+              />
+            </td>
+          </tr>
+          <tr>
+            <td>mot de passe:</td>
+            <td>
+              <input
+                class="form-control"
+                [(ngModel)]="user.mdp"
+                type="password"
+                name="p"
+              />
+            </td>
+          </tr>
+          <tr>
+            <td colspan="2">
+              <input
+                type="button"
+                (click)="connect()"
+                class="btn btn-primary"
+                value="connexion"
+              />
+            </td>
+          </tr>
+          <tr>
+            <td colspan="2">
+              <a href="inscription" class="link"> s'inscrire</a>
+            </td>
+          </tr>
+        </table>
+      </form>
+      <div align="center">
+        <img
+          src="../../assets/logo.png"
+          height="200"
+          class="rounded"
+          width="200"
+        />
+      </div>
+    </div>
+    <div class="col-sm-5"></div>
+  </div>
+</div>

@@ -1,0 +1,76 @@
+
+  <!-- Page Wrapper -->
+  <div id="wrapper">
+
+    <!-- Sidebar -->
+  <app-sidebar></app-sidebar>
+    <!-- End of Sidebar -->
+
+    <!-- Content Wrapper -->
+    <div id="content-wrapper" class="d-flex flex-column">
+
+      <!-- Main Content -->
+      <div id="content">
+
+        <!-- Topbar -->
+       <app-header></app-header>
+
+
+<div class="container-fluid">
+
+  <!-- Page Heading -->
+  <h1 class="h3 mb-4 text-gray-800">Gestion</h1>
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-3">
+      </div>
+      <div class="col-sm-6">
+  <form><table class="table table-borderless">
+    <tr><td colspan="2"><h1>Ajouter</h1></td></tr>
+    <tr><td>Nom:</td><td><input class="form-control" [(ngModel)]="user.nom" type="text" name="d"></td></tr>
+    <tr><td>Téléphone:</td><td><input class="form-control" [(ngModel)]="user.telephone" type="text" name="d"></td></tr>
+    <tr><td>Adresse:</td><td><input class="form-control" [(ngModel)]="user.adresse" type="text" name="d"></td></tr>
+    <tr><td>Email:</td><td><input class="form-control" [(ngModel)]="user.email" type="text" name="d"></td></tr>
+    <tr><td>mot de passe:</td><td><input class="form-control" [(ngModel)]="user.mdp"  type="password" name="p"></td></tr>
+    <tr><td>Activité:</td><td><input class="form-control" [(ngModel)]="user.activite" type="text" name="d"></td></tr>
+    <tr><td>R.I.B:</td><td><input class="form-control" [(ngModel)]="user.rib" type="number" name="d"></td></tr>
+    <tr><td>Description</td><td><textarea class="form-control" [(ngModel)]="user.description" name="d"></textarea></td></tr>
+    <tr><td colspan="2"><input type="button"  (click)="add()" class="btn btn-primary" value="Inscription"></td></tr>
+
+  </table>
+    </form>
+  </div>
+  <div class="col-sm-3">
+  </div>
+</div>
+</div>
+  <table class="table table-bordered">
+  <tr><td>nom</td><td>Adresse</td><td>Email</td><td>tel</td><td>Action</td></tr>
+  <tr *ngFor="let us of users ">
+    <td>{{us.nom}}</td><td>{{us.adresse}}</td><td>{{us.email}}</td><td>{{us.telephone}}</td><td><button (click)='delete(us.id)' class="btn btn-danger">supprimer</button></td></tr>
+
+
+
+  </table>
+</div>
+<!-- /.container-fluid -->
+
+</div>
+<!-- End of Main Content -->
+
+<!-- Footer -->
+<footer class="sticky-footer bg-white">
+<div class="container my-auto">
+  <div class="copyright text-center my-auto">
+    <span>Copyright &copy; Your Website 2020</span>
+  </div>
+</div>
+</footer>
+<!-- End of Footer -->
+
+</div>
+<!-- End of Content Wrapper -->
+
+</div>
+<!-- End of Page Wrapper -->
+
